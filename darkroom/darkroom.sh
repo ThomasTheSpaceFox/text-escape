@@ -37,6 +37,7 @@ do
     $TALK "you took the toothbrush"
     else
     $TALK "you leave the toothbrush there"
+    IN2B=nullvalue
     fi
   fi
   if [ "$IN2" = "hint" ]; then
@@ -59,6 +60,7 @@ do
         $TALK "you took the floppy disk"
       else
         $TALK "you leave the floppy disk there"
+        IN2C=nullvalue
       fi
     else
     $TALK "it's locked!"
