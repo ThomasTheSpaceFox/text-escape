@@ -1,9 +1,11 @@
 #!/bin/sh
+WHEREAMI2="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
+cd $WHEREAMI2
+cd $(cat ding.pop.txt)
+CMDCFG=$(dirs)/speakYN.txt
+TALK=$(dirs)/$(cat speakYN.txt)
 
-CMDCFG=/root/text-escape/speakYN.txt
-TALK=/root/text-escape/$(cat /root/text-escape/speakYN.txt)
-
-echo "$(cat /root/text-escape/art/darkroom1.txt)"
+echo "$(cat art/darkroom1.txt)"
 $TALK "you see a:"
 $TALK "sink"
 $TALK "door"
@@ -23,7 +25,7 @@ do
   read IN2
   done
   if [ "$IN2" = "help" ]; then
-  $TALK "$(cat /root/text-escape/help.txt)"
+  $TALK "$(cat help.txt)"
   fi
   if [ "$IN2" = "sink" ]; then
     $TALK "you see an unopened toothbrush"
@@ -33,7 +35,7 @@ do
       read IN2B
     done
     if [ "$IN2B" = "yes" ]; then
-    echo "1" > /root/text-escape/darkroom/toothbrush.txt
+    echo "1" > darkroom/toothbrush.txt
     $TALK "you took the toothbrush"
     else
     $TALK "you leave the toothbrush there"
@@ -47,7 +49,7 @@ do
     $TALK "and how are we going to open that locked door"
   fi
   if [ "$IN2" = "box" ]; then
-    if [ "$(cat /root/text-escape/darkroom/toothbrush.txt)" = "1" ]; then
+    if [ "$(cat darkroom/toothbrush.txt)" = "1" ]; then
       $TALK "You pick the box's lock with the toothbrush" 
       $TALK "you see a floppy disk inside the box"
       until  [[ "$IN2C" = "yes"  ||  "$IN2C" = "no" ]]
@@ -56,7 +58,7 @@ do
         read IN2C
       done
       if [ "$IN2C" = "yes" ]; then
-        echo "1" > /root/text-escape/darkroom/floppy.txt
+        echo "1" > darkroom/floppy.txt
         $TALK "you took the floppy disk"
       else
         $TALK "you leave the floppy disk there"
@@ -67,7 +69,7 @@ do
     fi
   fi
   if [ "$IN2" = "door" ]; then
-    if [ "$(cat /root/text-escape/darkroom/floppy.txt)" = "1" ]; then
+    if [ "$(cat darkroom/floppy.txt)" = "1" ]; then
       IN2=doorY
       $TALK "The door opened!"
     else
@@ -78,4 +80,4 @@ do
     IN2=nullvalue
   fi
 done
-echo "1" > /root/text-escape/darkroom/darkroom.complete.txt
+echo "1" > darkroom/darkroom.complete.txt

@@ -1,13 +1,16 @@
 #!/bin/sh
-CMDCFG=/root/text-escape/speakYN.txt
-TALK=/root/text-escape/$(cat /root/text-escape/speakYN.txt)
+WHEREAMI="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
+CMDCFG=$WEREAMI/speakYN.txt
+cd $WHEREAMI
+TALK=$WHEREAMI/$(cat speakYN.txt)
+echo "$WHEREAMI" > darkroom/ding.pop.txt
 
 $TALK "welcome to furry text-escape"
 $TALK "(C) 2015 Thomas Leathers"
 $TALK "the world is a strange place"
 $TALK "and this terminal window is not going to help"
 $TALK "you are a male fox"
-echo "$(cat /root/text-escape/art/opening1.txt)"
+echo "$(cat art/opening1.txt)"
 $TALK "you are locked in a dark room. you see a:"
 $TALK "bunny, she asks if you need help."
 $TALK "she says:"
@@ -24,10 +27,10 @@ do
   read IN1
   done
   if [ "$IN1" = "help" ]; then
-  $TALK "$(cat /root/text-escape/help.txt)"
+  $TALK "$(cat help.txt)"
   fi
   if [ "$IN1" = "about" ]; then
-  $TALK "$(cat /root/text-escape/about.txt)"
+  $TALK "$(cat about.txt)"
   fi
   if [ "$IN1" = "hint" ]; then
   $TALK "type start to start the game!"
@@ -36,15 +39,15 @@ do
     IN1=nullvalue
   fi
 done
-echo "0" > /root/text-escape/darkroom/darkroom.complete.txt
-DARKROOMSTAT=$(cat /root/text-escape/darkroom/darkroom.complete.txt)
-/root/text-escape/darkroom/objreset.sh
-/root/text-escape/darkroom/darkroom.sh
+echo "0" > darkroom/darkroom.complete.txt
+DARKROOMSTAT=$(cat darkroom/darkroom.complete.txt)
+darkroom/objreset.sh
+darkroom/darkroom.sh
 $TALK "you escaped! congrads! thanks for playing!"
 
 $TALK "would you like to see the credits, and a message from the develpoer?"
 $TALK "if so type yes, type anything else to exit."
 read CREDITSYN
 if [ "$CREDITSYN" = "yes" ]; then
-$TALK "$(cat /root/text-escape/credits.txt)"
+$TALK "$(cat credits.txt)"
 fi

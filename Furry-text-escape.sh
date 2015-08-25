@@ -1,3 +1,5 @@
 #!/bin/sh
-TERM="$(cat /root/text-escape/terminal.config.txt)"
-$TERM --title "Furry Text-Escape" -e /root/text-escape/text-escape.sh
+WHEREAMI="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
+cd $WHEREAMI
+TERM="$(cat terminal.config.txt)"
+$TERM --title "Furry Text-Escape" -e $(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)/text-escape.sh
