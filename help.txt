@@ -1,0 +1,5 @@
+You need help? Ms. Helpbunny says.
+well here are your options:
+
+help, will have me give you help.
+hint, will have me give you a hint.

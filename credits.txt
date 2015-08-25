@@ -1,0 +1,23 @@
+Programming, Thomas Leathers (ThomasTheSpaceFox)
+Text Artist, Thomas Leathers (ThomasTheSpaceFox)
+Writing, Thomas Leathers (ThomasTheSpaceFox)
+Testing, Thomas Leathers (ThomasTheSpaceFox)
+Debugging, Thomas Leathers (ThomasTheSpaceFox)
+Developer, Thomas Leathers (ThomasTheSpaceFox)
+
+(c) 2015 Thomas Leathers
+
+A message from the developer
+
+I hope you found this game fun.
+I spent a whole day and a long night writing this game.
+It took a bunch of troubleshooting to get this to run.
+This may be surprise you but, the speech engine support was very easy to implement.
+the hard part was getting the object tracking, until, and if commands to work right.
+
+Why?
+I started making this game to push my BASH skills.
+I also wanted to say that I programmed an escape game in BASH!
+using my knowledge of BASH and a programming tricks I originally learned while programming
+my GTKtools and GTKfindit programs, I tackled another BASH challenge. a text based escape game!
+with text to speech support as well!
