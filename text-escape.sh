@@ -50,4 +50,6 @@ $TALK "if so type yes, type anything else to exit."
 read CREDITSYN
 if [ "$CREDITSYN" = "yes" ]; then
 $TALK "$(cat credits.txt)"
+$TALK "press enter to exit"
+read EXITNULLENTRY
 fi
