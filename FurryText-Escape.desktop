@@ -1,8 +1,8 @@
 [Desktop Entry]
 Name=Furry Text-Escape
-Icon=/root/text-escape/FTE_48.png
+Icon=/usr/lib/text-escape/FTE_48.png
 GenericName=A text-based escape game
-Exec=/root/text-escape/Furry-text-escape.sh
+Exec=/usr/lib/text-escape/Furry-text-escape.sh
 Terminal=false
 Type=Application
 Categories=X-Fun-adventure

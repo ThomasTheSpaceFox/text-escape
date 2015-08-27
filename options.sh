@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 WHEREAMI="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
 cd $WHEREAMI
 export DIALOG='
