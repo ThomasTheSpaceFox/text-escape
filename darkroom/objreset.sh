@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 WHEREAMI2="$(cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd && echo)"
 cd $WHEREAMI2
 cd $(cat ding.pop.txt)
